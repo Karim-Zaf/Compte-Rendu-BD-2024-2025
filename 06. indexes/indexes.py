@@ -27,9 +27,7 @@ def perf_mongo(csv_file, n):
         st = time.process_time()
         for my_row in my_data[0:n]:
             # print(my_row['M'],type(my_row['M']))
-            #
             # find and replace <=> test if key exists
-            #
             mycol.replace_one({my_row['M']: 1},{my_row['M']:1},upsert=True,hint=[ ('M', 1) ])
         # get the end time
         et = time.process_time()
